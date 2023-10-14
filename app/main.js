@@ -27,8 +27,8 @@ app.whenReady().then(() => {
 /*New Update Available*/
 autoUpdater.on("update-available", (info) => {
   curWindow.showMessage(`Update available. Current version ${app.getVersion()}`);
-  let pth = autoUpdater.downloadUpdate();
-  curWindow.showMessage(pth);
+  autoUpdater.downloadUpdate();
+  curWindow.showMessage(autoUpdater.downloadUpdate());
 });
 
 autoUpdater.on("update-not-available", (info) => {
